@@ -98,10 +98,9 @@ func NewDriver(libType ftypes.LangType) (Driver, bool) {
 
 // Driver represents security advisories for each programming language
 type Driver struct {
-	ecosystem dbTypes.Ecosystem
-	comparer  compare.Comparer
-	dbc       db.Config
-	// Optional fields for custom implementations (e.g., rootio)
+	ecosystem                 dbTypes.Ecosystem
+	comparer                  compare.Comparer
+	dbc                       db.Config
 	typeFunc                  func() string
 	detectVulnerabilitiesFunc func(pkgID, pkgName, pkgVer string) ([]types.DetectedVulnerability, error)
 }
